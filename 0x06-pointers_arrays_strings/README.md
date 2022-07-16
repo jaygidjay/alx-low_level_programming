@@ -1,2 +1,0 @@
-pointers and arrays
-check
