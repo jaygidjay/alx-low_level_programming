@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_strcat - function commute strings
+ * _strcat - function commute strings
  * @dest: destination
  * @src: source
  * Return: the pointer to dest
