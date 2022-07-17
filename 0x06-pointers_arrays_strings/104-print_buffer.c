@@ -1,43 +1,21 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- *print_buffer-Print a buffer 10 bytes per line.
- *@b: Buffer address.
- *@size: Number of characters to be printed.
- *Return: no return.
+ *reverse_array - reverse an array.
+ *@a: array.
+ *@n: array's length.
  */
-void print_buffer(char *b, int size)
-{
-int j, k, l;
 
-if (size <= 0)
-printf("\n");
-else
+void reverse_array(int *a, int n)
 {
-for (j = 0; j < size; j += 10)
+int i, j, tmp;
+
+j = n - 1;
+for (i = 0; i < n / 2; i++)
 {
-printf("%.8x:", j);
-for (k = j; k < j + 10; k++)
-{
-if (k % 2 == 0)	
-printf("  ");	
-if (k < size)
-printf("%.2x", *(b + k));
-else
-printf("  ");
-}
-printf(" ");
-for (l = j; l < j + 10; l++)
-{
-if (l >= size)
-break;
-if (*(b + l) < 32 || *(b + l) > 126)
-printf("%c", '.');
-else
-printf("%c", *(b + l));
-}
-printf("\n");
-}
+tmp = a[i];
+a[i] = a[j];
+a[j] = tmp;
+j--;
 }
 }
